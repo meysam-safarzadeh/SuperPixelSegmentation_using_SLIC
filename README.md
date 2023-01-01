@@ -10,8 +10,7 @@ In this project, the goal is to segment rover, background, and shadow (if any). 
 ## Data
 Our data consists of four images. All of them are in RGB color space. Picture 0 has three objects including rover, background, and shadow; and the rest of them are without shadow. Figures 1 to 4 are the original images before any processing.
 
-<img src="https://user-images.githubusercontent.com/51737180/210186806-ff82405a-0117-4252-8086-ca8d5cf21eb7.png" width="500">
-<img src="https://user-images.githubusercontent.com/51737180/210186813-436fba72-2889-4ae2-85dc-aa4bf8b30775.png" width="500">
+<img src="https://user-images.githubusercontent.com/51737180/210186806-ff82405a-0117-4252-8086-ca8d5cf21eb7.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186813-436fba72-2889-4ae2-85dc-aa4bf8b30775.png" width="400">
 
 Figure 1 and 2
 
