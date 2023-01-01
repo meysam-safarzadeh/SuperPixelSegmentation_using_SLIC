@@ -38,23 +38,19 @@ Figure 8
 
 Furthermore, in the method [^1] they stated that the number of iterations is 10 which is suitable for most images, but we intend to investigate this further. To do so, we increased the number of iterations to 50. The result is shown in Figure 9. Also, Figure 10 shows the above-mentioned spot in Figure 9 which is segmented very well. Consequently, we select these parameters as a well-tuned one, although in some other cases are still not perfect. Figure 11 shows the over-segmentation result obtained by the SLIC algorithm after parameter tuning. SLIC segmentation on the original image and without that for picture 2 are shown in Figures 12 and 13 respectively. Moreover, these results for pictures 1 and 0 are shown in Figures 14, 15, 16, and 17 respectively. By looking at the results of SLIC in other pictures, we can conclude that the parameters are promising, and can help the merging algorithms (Hierarchical and Ncuts) very well. In the next part, we are going to try adaptive SLIC and compare it with SLIC.
 
-![image](https://user-images.githubusercontent.com/51737180/210186946-119c8a69-68e8-4201-891b-c02cd389e082.png)
-![image](https://user-images.githubusercontent.com/51737180/210186949-fdef7237-b764-40e1-ab61-439617941f19.png)
+<img src="https://user-images.githubusercontent.com/51737180/210186946-119c8a69-68e8-4201-891b-c02cd389e082.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186949-fdef7237-b764-40e1-ab61-439617941f19.png" width="400">
 
 Figure 9 and 10
 
-![image](https://user-images.githubusercontent.com/51737180/210186954-94c3a3c8-8999-4987-8be2-1dfaab090814.png)
-![image](https://user-images.githubusercontent.com/51737180/210186956-8d261106-68a2-4001-894d-405b5e122f06.png)
+<img src="https://user-images.githubusercontent.com/51737180/210186954-94c3a3c8-8999-4987-8be2-1dfaab090814.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186956-8d261106-68a2-4001-894d-405b5e122f06.png" width="400">
 
 Figure 11 and 12
 
-![image](https://user-images.githubusercontent.com/51737180/210186964-061fd424-3167-4fdf-9ce9-da23528c944e.png)
-![image](https://user-images.githubusercontent.com/51737180/210186968-209720c5-6a83-478b-b570-9f9a56ae2f1c.png)
+<img src="https://user-images.githubusercontent.com/51737180/210186964-061fd424-3167-4fdf-9ce9-da23528c944e.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186968-209720c5-6a83-478b-b570-9f9a56ae2f1c.png" width="400">
 
 Figure 13 and 14
 
-![image](https://user-images.githubusercontent.com/51737180/210186971-06870bcd-ea09-48ce-9811-fda0e8ea23ed.png)
-![image](https://user-images.githubusercontent.com/51737180/210186973-a2ebac79-416e-4bde-bc1c-9ea990330380.png)
+<img src="https://user-images.githubusercontent.com/51737180/210186971-06870bcd-ea09-48ce-9811-fda0e8ea23ed.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186973-a2ebac79-416e-4bde-bc1c-9ea990330380.png" width="400">
 
 Figure 15 and 16
 
@@ -65,94 +61,79 @@ Figure 17
 ## Adaptive SLIC
 Adaptive SLIC is similar to the previous version of it except it automatically adapts the compactness based on the region. Therefore, there is no need to tune the compactness and all we have to do is define the number of segments. In order to do a fair comparison between the SLIC methods, we assign 600 for the number of segments (superpixels). Figure 18 shows the segmentation boundaries on the original image and also Figure 19 shows the segmentation labels with the mean intensity of each superpixel. It can be seen that in challenging spots, the accuracy of segmentation is not very well and some superpixels do not adhere to the boundaries of the rover. Figure 20 shows the mentioned spot obtained from SLIC and an adaptive version of it.
 
-![image](https://user-images.githubusercontent.com/51737180/210186988-e248d25b-8dc8-49b5-97f7-016377b523dc.png)
-![image](https://user-images.githubusercontent.com/51737180/210186993-e1aea947-d618-430f-ad6d-3b5ea9975663.png)
+<img src="https://user-images.githubusercontent.com/51737180/210186988-e248d25b-8dc8-49b5-97f7-016377b523dc.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186993-e1aea947-d618-430f-ad6d-3b5ea9975663.png" width="400">
 
 Figure 18 and 19
 
-![image](https://user-images.githubusercontent.com/51737180/210187000-01564052-472f-4049-aea4-e247dad4f97a.png)
-![image](https://user-images.githubusercontent.com/51737180/210187002-f235bc0e-f7f8-4f25-87d6-b89f62f6c8bb.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187000-01564052-472f-4049-aea4-e247dad4f97a.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187002-f235bc0e-f7f8-4f25-87d6-b89f62f6c8bb.png" width="400">
 
 Figure 20 The left picture is obtained from the Adaptive SLIC and the right obtained from SLIC after parameter tuning
 
 As can be seen in Figure 20, some superpixels (shown by the red line) exceed the rover’s boundaries. To conclude, an adaptive version of SLIC cannot overcome the refined version of SLIC. In the next Figures (21 to 26) the segmentation result and labels of pictures 2, 1, and 0 are shown respectively.
 
-![image](https://user-images.githubusercontent.com/51737180/210187019-ba426a82-7f77-4184-905e-972cee301936.png)
-![image](https://user-images.githubusercontent.com/51737180/210187022-3b600e32-b431-4a55-9c99-4b49089b02a1.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187019-ba426a82-7f77-4184-905e-972cee301936.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187022-3b600e32-b431-4a55-9c99-4b49089b02a1.png" width="400">
 
 Figure 21 and 22
 
-![image](https://user-images.githubusercontent.com/51737180/210187026-16999a83-f111-4548-8db0-008bc71b1be3.png)
-![image](https://user-images.githubusercontent.com/51737180/210187028-b8238c40-ebf0-4168-b5e2-9215e87869c3.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187026-16999a83-f111-4548-8db0-008bc71b1be3.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187028-b8238c40-ebf0-4168-b5e2-9215e87869c3.png" width="400">
 
 Figure 23 and 24
 
-![image](https://user-images.githubusercontent.com/51737180/210187032-0526044e-ffa0-4161-a6f0-1c15c20bdf39.png)
-![image](https://user-images.githubusercontent.com/51737180/210187035-ec2e9867-fe91-4dc3-8d31-5a3422e704d9.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187032-0526044e-ffa0-4161-a6f0-1c15c20bdf39.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187035-ec2e9867-fe91-4dc3-8d31-5a3422e704d9.png" width="400">
 
 Figure 25 and 26
 
 ## RAG
 Region Adjacency Graph is a graph that connects the superpixels and assigns a weight for each connection. This weight represents the Euclidean distance between the average of two superpixels. The more the weight, the more different the mean of those adjacent regions. Figure 27 shows the initial RAG of picture 3 obtained from the SLIC algorithm. Higher values of difference in the mean color of regions are shown with the lighter color. Therefore, the boundaries weights are more than 150 roughly, and regions similar together in terms of the mean of superpixels, have weights less than 25 roughly. In the next Figures (28 to 33), the initial RAG of pictures 2, 1, and 0 are shown respectively.
 
-![image](https://user-images.githubusercontent.com/51737180/210187098-fe2003e6-3c57-4eb2-94d6-43ee723915b2.png)
-![image](https://user-images.githubusercontent.com/51737180/210187100-820d4975-c42e-4f8e-b6fd-0156e6672af0.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187098-fe2003e6-3c57-4eb2-94d6-43ee723915b2.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187100-820d4975-c42e-4f8e-b6fd-0156e6672af0.png" width="400">
 
 Figure 27 and 28
 
-![image](https://user-images.githubusercontent.com/51737180/210187103-3ae6e82c-3ac0-4eea-a1a6-5bfff07c3f32.png)
-![image](https://user-images.githubusercontent.com/51737180/210187107-8ff7b4ac-22fc-4cc8-89d7-287ea76f51ef.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187103-3ae6e82c-3ac0-4eea-a1a6-5bfff07c3f32.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187107-8ff7b4ac-22fc-4cc8-89d7-287ea76f51ef.png" width="400">
 
 Figure 29 and 30
 
 ## Hierarchical merging
 This method merges the regions with a weight less than a threshold. Therefore, based on the color bar of the previous figures we can choose a proper value for the threshold. In this section, we start investigating from pictures 0 to 3. To begin with, based on the color bar we assign the threshold to 40. The new RAG is shown in Figure 31 with new weights. Also, the segmentation result is shown in Figure 32. As it can be seen, the overall performance is very well, but in some regions which are close in color (weight is low), the segments do not adhere to the boundaries. For instance, the edge of the rover’s scope is not well segmented which is circled by the red line in Figure 32. Perhaps, by reducing the threshold we can overcome this issue a little.
 
-![image](https://user-images.githubusercontent.com/51737180/210187116-f360475d-ae95-44b9-8474-da8167a56e70.png)
-![image](https://user-images.githubusercontent.com/51737180/210187129-e1f7bd42-9933-43c0-9fc7-05c0bba365b5.png)
+https://user-images.githubusercontent.com/51737180/210187116-f360475d-ae95-44b9-8474-da8167a56e70.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187129-e1f7bd42-9933-43c0-9fc7-05c0bba365b5.png" width="400">
 
 Figure 31 and 32
 
 Let assign 25 for the threshold. Figure 33 shows the result for picture 0. The edge of the scope is better segmented but on the other hand, we faced over-segmentation for the background which is not desirable. Furthermore, for other pictures, based on their color bar we choose a proper threshold in a way that adheres to the boundaries as much as possible. After trying several values for the threshold for picture 1, the best result is shown in Figure 34. It adheres to the boundaries of the rover, although the background is not merged to a unit segment. Nevertheless, as long as it does not exceed the boundaries of the rover, it is acceptable and we can apply further algorithms like morphological operations to merge the background into a unit region. For the next picture, we initially assign 170 based on the color bar and then gradually change it to a better value. After some iterations, we assigned 110 for picture 2. Figure 35 shows the segmentation result of this picture. For the last picture, by trying a couple of values the best result is obtained with a threshold equal to 110. Nonetheless, in some areas, the segments exceed the boundaries of the object which are constant even for thresholds as low as 45. This is because of the similarity between the mean values of the mark on the rover and the background. Other remaining small superpixels again can be merged by morphological operations which we did in the previous project of the course.
 
-![image](https://user-images.githubusercontent.com/51737180/210187189-d5fa524c-0662-4a82-8f31-92bdba2f9bbe.png)
-![image](https://user-images.githubusercontent.com/51737180/210187192-e513935b-45bc-4236-a0fe-02eef2ac236d.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187189-d5fa524c-0662-4a82-8f31-92bdba2f9bbe.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187192-e513935b-45bc-4236-a0fe-02eef2ac236d.png" width="400">
 
 Figure 33 and 34
 
-![image](https://user-images.githubusercontent.com/51737180/210187195-66151f2b-e9cd-45e5-b548-61d16b0aacf8.png)
-![image](https://user-images.githubusercontent.com/51737180/210187205-c6f192ce-7509-4c23-8c39-0ef74223e78d.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187195-66151f2b-e9cd-45e5-b548-61d16b0aacf8.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187205-c6f192ce-7509-4c23-8c39-0ef74223e78d.png" width="400">
 
 Figure 35 and 36
 
 Consequently, in order to prevent repetitive over-segmentation, we let the threshold be high. In this way, we can deal with the small remaining regions easier.
 Moreover, we tried the SLIC over-segmentation with a much less number of segments which resulted in better outcomes. Figure 37 is the final result of picture 0 after hierarchical merging which is exactly three segments as we expected although the edge of the scope is not well segmented. This is the weakness of the method and to the best of our efforts, it is the best possible result. Furthermore, the final segmentation of pictures 1, 2, and 3 are shown in Figures 38 to 42.
 
-![image](https://user-images.githubusercontent.com/51737180/210187218-eb62ba5b-b39d-4077-87f2-28805603ba89.png)
-![image](https://user-images.githubusercontent.com/51737180/210187221-3efa0cb0-06fc-4b70-98f4-1e98dad9b922.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187218-eb62ba5b-b39d-4077-87f2-28805603ba89.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187221-3efa0cb0-06fc-4b70-98f4-1e98dad9b922.png" width="400">
 
 Figure 37 and 38
 
-![image](https://user-images.githubusercontent.com/51737180/210187228-24ab7fe3-f261-428b-8fdf-5db9b8925eb9.png)
-![image](https://user-images.githubusercontent.com/51737180/210187229-7aa50a5b-6eb5-4a13-b7f1-d306c52b2fbb.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187228-24ab7fe3-f261-428b-8fdf-5db9b8925eb9.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187229-7aa50a5b-6eb5-4a13-b7f1-d306c52b2fbb.png" width="400">
 
 Figure 39 and 40
 
-![image](https://user-images.githubusercontent.com/51737180/210187234-2c71a326-b0b1-4489-b2de-3ee7e6e83f6b.png)
-![image](https://user-images.githubusercontent.com/51737180/210187237-b0d3f8a5-4df1-4270-9d60-faa2b0d47a4c.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187234-2c71a326-b0b1-4489-b2de-3ee7e6e83f6b.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187237-b0d3f8a5-4df1-4270-9d60-faa2b0d47a4c.png" width="400"> 
 
 Figure 41 and 42
 
 ## NCuts
 The normalized cuts algorithm is based on a generalized eigenvalue problem that calculates the similarity and dissimilarity between the groups of the graphs. This method has two parameters to tune that is threshold and number of cuts. The threshold defines the margin to control the dividing of the subgraphs. Moreover, the number of cuts is just to initialize the algorithm, and then the algorithm itself can investigate further to find the optimal value for it. By investigating the values for the threshold finally, we assigned 0.005 for it and 30 for the initial number of cuts. Figure 43 shows the result of this configuration in picture 0. Again, the segmentation is suffering from crossing boundaries in superpixels similar together in terms of color (circled by the red line). This is the weakness of both hierarchical and NCuts methods. Although the quality of segmentation is very well in other areas, after trying several numbers of thresholds for the algorithm, it is not able to merge regions of the rover, so the rover is considered as two superpixels which are not proper. This has happened to picture 3 which the final segmentation result has 4 segments although it is expected to be 2. The final segmentation result of picture 3 is shown in Figure 47. On the other hand, pictures 1 and 2 can merge properly with the low crossing of boundaries. Figures 44 and 45 show the result of segmentation of picture 1 after NCuts merging which is crossing the boundaries of the rover (circled by the red line).
 
-![image](https://user-images.githubusercontent.com/51737180/210187329-521fe636-7593-4d77-8489-333325a4cc1f.png)
-![image](https://user-images.githubusercontent.com/51737180/210187316-279bce01-4b79-4d2c-9ac6-b7973f9eb55f.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187329-521fe636-7593-4d77-8489-333325a4cc1f.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187316-279bce01-4b79-4d2c-9ac6-b7973f9eb55f.png" width="400">
 
 Figure 43 and 44
 
-![image](https://user-images.githubusercontent.com/51737180/210187300-94a15bb2-3939-422b-aca5-49343d9b22cc.png)
-![image](https://user-images.githubusercontent.com/51737180/210187260-fcedeaae-1582-487e-b272-fc87992ddc72.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187300-94a15bb2-3939-422b-aca5-49343d9b22cc.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187260-fcedeaae-1582-487e-b272-fc87992ddc72.png" width="400">
 
 Figure 45 and 46
 
