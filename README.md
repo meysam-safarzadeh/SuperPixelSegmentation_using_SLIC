@@ -18,19 +18,19 @@ Figure 1 and 2
 
 Figure 3 and 4
 
+<img src="https://user-images.githubusercontent.com/51737180/210187758-c1f12ad0-1fc6-4235-86a2-0ee8f5e007f6.png" width="400">
+
+Figure 5
+
 ## SLIC
 Simple linear iterative clustering (SLIC) utilized a k-means algorithm to generate superpixels that are supposed to adherence object boundaries in the image. It has two parameters to adjust which are the number of superpixels to generate and compactness. Moreover, the input image should be in CIELAB color space which we utilized skimage.segmentation.slic function that automatically changes the color space of the input image. To begin with, we set 200 for the k (number of superpixels), and 10 for compactness which is the default of their method [^1]. Usually, compact superpixels are more desirable but increasing the compactness may result in reduced boundary adherence [1]. Figure 5 shows the output label of the SLIC algorithm, and Figure 6 shows superpixels with boundaries in the original image.
 At this stage, we should tune these two parameters in a way that superpixels boundaries do not exceed the boundaries of the objects which in Figure 6 is not satisfied at certain areas circled by a red line. Therefore, in the next attempt, we can make it more compact in order to approach the desired over-segmentation. In Figure 7, it is shown that by increasing the compactness the result is more desirable yet some superpixels do not adherent the boundaries which are shown in a red circle. This problem should be because of the number of segments. Since the algorithm is supposed to generate superpixels roughly equal in size. Therefore, to continue tuning, we can increase the number of segments to generate more desirable superpixels. Figure 8 shows the results of increasing the number of segments to 600. The mentioned spot is segmented a little better by this tuning yet it can be better. 
 
-![image](https://user-images.githubusercontent.com/51737180/210186910-6da1f5ce-57fc-41a3-9751-df4953a45b42.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187777-1a059947-75d6-48df-ae30-815da8c37a5a.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187788-4334a770-4c5b-47eb-959c-4265ca6b0548.png" width="400"> 
 
-Figure 6
+Figure 6 and 7
 
-![image](https://user-images.githubusercontent.com/51737180/210186920-4f23e6e3-1b8b-4884-9b84-3b79d6c0b4ef.png)
-
-Figure 7
-
-![image](https://user-images.githubusercontent.com/51737180/210186935-8c619851-721e-4a14-8c03-4eb36f8346ca.png)
+<img src="https://user-images.githubusercontent.com/51737180/210187797-0a1a9dbf-7cc8-41a1-b9f0-39eab6d41199.png" width="400">
 
 Figure 8
 
@@ -38,7 +38,7 @@ Figure 8
 
 Furthermore, in the method [^1] they stated that the number of iterations is 10 which is suitable for most images, but we intend to investigate this further. To do so, we increased the number of iterations to 50. The result is shown in Figure 9. Also, Figure 10 shows the above-mentioned spot in Figure 9 which is segmented very well. Consequently, we select these parameters as a well-tuned one, although in some other cases are still not perfect. Figure 11 shows the over-segmentation result obtained by the SLIC algorithm after parameter tuning. SLIC segmentation on the original image and without that for picture 2 are shown in Figures 12 and 13 respectively. Moreover, these results for pictures 1 and 0 are shown in Figures 14, 15, 16, and 17 respectively. By looking at the results of SLIC in other pictures, we can conclude that the parameters are promising, and can help the merging algorithms (Hierarchical and Ncuts) very well. In the next part, we are going to try adaptive SLIC and compare it with SLIC.
 
-<img src="https://user-images.githubusercontent.com/51737180/210186946-119c8a69-68e8-4201-891b-c02cd389e082.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186949-fdef7237-b764-40e1-ab61-439617941f19.png" width="400">
+<img src="https://user-images.githubusercontent.com/51737180/210187818-5d68b504-a121-424d-a4d3-f9e71f754182.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186949-fdef7237-b764-40e1-ab61-439617941f19.png" width="400">
 
 Figure 9 and 10
 
@@ -97,7 +97,7 @@ Figure 29 and 30
 ## Hierarchical merging
 This method merges the regions with a weight less than a threshold. Therefore, based on the color bar of the previous figures we can choose a proper value for the threshold. In this section, we start investigating from pictures 0 to 3. To begin with, based on the color bar we assign the threshold to 40. The new RAG is shown in Figure 31 with new weights. Also, the segmentation result is shown in Figure 32. As it can be seen, the overall performance is very well, but in some regions which are close in color (weight is low), the segments do not adhere to the boundaries. For instance, the edge of the rover’s scope is not well segmented which is circled by the red line in Figure 32. Perhaps, by reducing the threshold we can overcome this issue a little.
 
-https://user-images.githubusercontent.com/51737180/210187116-f360475d-ae95-44b9-8474-da8167a56e70.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187129-e1f7bd42-9933-43c0-9fc7-05c0bba365b5.png" width="400">
+<img src="https://user-images.githubusercontent.com/51737180/210187116-f360475d-ae95-44b9-8474-da8167a56e70.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210187129-e1f7bd42-9933-43c0-9fc7-05c0bba365b5.png" width="400">
 
 Figure 31 and 32
 
