@@ -14,7 +14,7 @@ Our data consists of four images. All of them are in RGB color space. Picture 0 
 
 Figure 1 and 2
 
-![image](https://user-images.githubusercontent.com/51737180/210186819-5984571b-091c-441b-97a3-bfb8f1445388.png) ![image](https://user-images.githubusercontent.com/51737180/210186823-8ca1f3af-c552-4770-a685-2a534818d75f.png)
+<img src="https://user-images.githubusercontent.com/51737180/210186819-5984571b-091c-441b-97a3-bfb8f1445388.png" width="400"> <img src="https://user-images.githubusercontent.com/51737180/210186823-8ca1f3af-c552-4770-a685-2a534818d75f.png" width="400">
 
 Figure 3 and 4
 
